@@ -1,6 +1,5 @@
 # Case_Study_1
 
-
 # Introduction
 ​
 This analysis is for a Capstone Project from the Google Data Analytics Certificate. The project is based on the case study "Sophisticated, Clear, and Polished: Divvy and Data Visualization" written by Kevin Hartman (found here: https://artscience.blog/home/divvy-dataviz-case-study). We will be using the Divvy dataset for our analysis. This project aims to collect, prepare, process, and analyze our given data source. Then share our data insights and visualizations to answer the key business question the scenario: "In what ways do the members and the casual riders use Divvy bikes differently?"
@@ -52,6 +51,8 @@ The data source is public and can be used to explore the different customer type
 * 202106-divvy-tripdata
 * 202107-divvy-tripdata
 * 202108-divvy-tripdata
+
+
 ```{r}
 install.packages("tidyverse")
 library(tidyverse)
@@ -91,5 +92,37 @@ X202108_divvy_tripdata <- read_csv("~/Project_1/202108-divvy-tripdata.csv")
 View(X202108_divvy_tripdata)
 ```
 
+# Compare column names of the files
 
 
+```{r}
+colnames(X202009_divvy_tripdata)
+colnames(X202010_divvy_tripdata)
+colnames(X202011_divvy_tripdata)
+colnames(X202012_divvy_tripdata)
+colnames(X202101_divvy_tripdata)
+colnames(X202102_divvy_tripdata)
+colnames(X202103_divvy_tripdata)
+colnames(X202104_divvy_tripdata)
+colnames(X202105_divvy_tripdata)
+colnames(X202106_divvy_tripdata)
+colnames(X202107_divvy_tripdata)
+colnames(X202108_divvy_tripdata)
+```
+
+# Inspect the data frames and look for inconsistencies
+
+```{r}
+str(X202009_divvy_tripdata)
+str(X202010_divvy_tripdata)
+str(X202011_divvy_tripdata)
+str(X202012_divvy_tripdata)
+str(X202101_divvy_tripdata)
+str(X202102_divvy_tripdata)
+str(X202103_divvy_tripdata)
+str(X202104_divvy_tripdata)
+str(X202105_divvy_tripdata)
+str(X202106_divvy_tripdata)
+str(X202107_divvy_tripdata)
+str(X202108_divvy_tripdata)
+```

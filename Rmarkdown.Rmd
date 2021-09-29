@@ -143,9 +143,36 @@ X202011_divvy_tripdata <- mutate(X202011_divvy_tripdata, start_station_id = as.c
 all_trips <- bind_rows(X202009_divvy_tripdata, X202010_divvy_tripdata, X202011_divvy_tripdata, X202012_divvy_tripdata, X202101_divvy_tripdata, X202102_divvy_tripdata, X202103_divvy_tripdata, X202104_divvy_tripdata, X202105_divvy_tripdata, X202106_divvy_tripdata, X202107_divvy_tripdata, X202108_divvy_tripdata)
 ```
 
-### 3. Prepare Dat for Analysis on Rides and Riders
+### 3. Prepare Data for Analysis on Rides and Riders
+
+# Inspect the new table (all_trips)
+
+# dimensions of the data frame
+
+```{r}
+dim(all_trips)
+```
+
+ 
+# see the first 6 rows
+
+```{r}
+head(all_trips) 
+```
 
 
+# see list of columns and data types
+
+```{r}
+str(all_trips) 
+```
+
+# statistical summary of the data (mainly for numeric data)
+
+
+```{r}
+summary(all_trips)
+```
 
 
 

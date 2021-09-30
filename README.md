@@ -1,28 +1,26 @@
 # Case_Study_1
 
-# Introduction
-​
 This analysis is for a Capstone Project from the Google Data Analytics Certificate. The project is based on the case study "Sophisticated, Clear, and Polished: Divvy and Data Visualization" written by Kevin Hartman (found here: https://artscience.blog/home/divvy-dataviz-case-study). We will be using the Divvy dataset for our analysis. This project aims to collect, prepare, process, and analyze our given data source. Then share our data insights and visualizations to answer the key business question the scenario: "In what ways do the members and the casual riders use Divvy bikes differently?"
-​
+
 # Scenario
-​
+
 In the given scenario, I am a data analyst working in the marketing analyst team at Cyclistic, a bike-share company in Chicago. The director of marketing believes the company's future success depends on maximizing the number of annual memberships. My team aims to understand how casual riders and annual members use Cyclistic bikes differently. These insights will help the marketing team design a new marketing strategy to convert casual riders into annual members.
-​
+
 **Key Stakeholders:**
-​
+
 * Primary Stakeholders - the director of marketing
 * Secondary Stakeholders - the marketing analytics team and the executive team
-​
+
 **Business Task**
-​
+
 Analyze the Cyclistic’s historical trip data from the past 12 months to identify trends that differ between annual members and casual riders.
-​
+
 # Preparing Data For Exploration:
-​
+
 **Data Sources:**
-​
+
 The datasets used for this analysis are made available by Motivate Internation Inc. under this [licence](https://www.divvybikes.com/data-license-agreement). 
-​
+
 [Data Source link](https://divvy-tripdata.s3.amazonaws.com/index.html)
 ​
 The data source is public and can be used to explore the different customer types. 

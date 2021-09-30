@@ -381,6 +381,6 @@ ggmap(chicago_stamen,darken = c(0.8, "white")) +
 
 # This contrasts heavily with the longer range of the annual users that connect the downtown with the outskirts of the city, that would suggest they are mostly people that live outside the downtown and use the service to commute everyday to their works in the city.
 
-
+  
 
 

@@ -338,8 +338,8 @@ ggmap(chicago_stamen,darken = c(0.7, "white")) +
     theme(legend.position="none")
 ```
 ![](Images/00002d6)
-![](Images/00002b)
 
+![](Images/00002b.png)
 
 **Notes:**
 * We can see that the most popular routes are the casual members in the central area by the bay; this could be because many casual members are tourists. On the map for the annual members, the most popular routes are longer in the distance and are in the more local areas.    

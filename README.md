@@ -47,7 +47,7 @@ The data source is public and can be used to explore the different customer type
 
 
 
-**Required R packages**
+**Required R Packages**
 
 ```{r}
 install.packages("tidyverse")
@@ -70,9 +70,9 @@ library(gridExtra)
 
 ```
 
-#preparing Data for Analysis
+#Preparing Data for Analysis
 
-**Uploading the 12 Data Files**
+**Uploading the 12 data files from the past 12 months of the year**
 
 ```{r}
 library(readr)
@@ -90,7 +90,7 @@ X202107_divvy_tripdata <- read_csv("~/Project_1/202107-divvy-tripdata.csv")
 X202108_divvy_tripdata <- read_csv("~/Project_1/202108-divvy-tripdata.csv")
 ```
 
-**Comparing Column Names of The Files**
+**Comparing column names in each of the files**
 
 ```{r}
 colnames(X202009_divvy_tripdata)
@@ -107,9 +107,11 @@ colnames(X202107_divvy_tripdata)
 colnames(X202108_divvy_tripdata)
 ```
 
-**Note: all column Names in each file are the same**
+**Notes:**
 
-**Inspect the data frames and look for inconsistencies**
+* All column names in each file have the exact same names.
+
+**Inspecting the data frames and look for inconsistencies**
 
 ```{r}
 str(X202009_divvy_tripdata)
@@ -126,7 +128,7 @@ str(X202107_divvy_tripdata)
 str(X202108_divvy_tripdata)
 ```
 
-**Note** Files "X202009_divvy_tripdata", "X202009_divvy_tripdata", and "X202009_divvy_tripdata" have numerical columns on start_station_id and end_station_id.  The rest of the files have characters for these columns, which means these files need to be changed to characters so that they can stack correctly.
+**Notes** Files "X202009_divvy_tripdata", "X202009_divvy_tripdata", and "X202009_divvy_tripdata" have numerical columns on start_station_id and end_station_id.  The rest of the files have characters for these columns, which means these files need to be changed to characters so that they can stack correctly.
 
 **Changing files Columns from numerical to character**
 
@@ -146,18 +148,22 @@ all_trips <- bind_rows(X202009_divvy_tripdata, X202010_divvy_tripdata, X202011_d
 ```
 
 
-**Inspecting Columns and Data Types for "all_trips"**
+**Inspecting columns and data types for the new data frame "all_trips"**
 
 ```{r}
 str(all_trips) 
 summary(all_trips)
 ```
+**Notes:**
+* No corrections are needed for the next steps.
 
 **Observations for each rider type**
 
 ```{r}
 table(all_trips$member_casual)
 ```
+**Notes:**
+* For casual there are 2225089 observations and for member there are 2687983 observations.
 
 **Adding New Columns "date", "month", "day", and "year" for each trip**
 
@@ -169,7 +175,7 @@ all_trips$year <- format(as.Date(all_trips$date), "%Y")
 all_trips$day_of_week <- format(as.Date(all_trips$date), "%a")
 ```
 
-**Calculate the ride length and adding it as a new column ("ride_length")**
+**Calculating the ride length and adding it as a new column ("ride_length")**
 
 ```{r}
 all_trips$ride_length <- difftime(all_trips$ended_at, all_trips$started_at, units = "mins")
@@ -183,7 +189,8 @@ str(all_trips)
 summary(all_trips)
 ```
 
-**note: Need to convert the column "ride_length" from factor to numeric for further run calculations**
+**Notes:**
+* Need to convert the column "ride_length" from factor to numeric for further calculations.
 
 **Converting column "ride_length" from factor to numeric**
 
@@ -200,7 +207,8 @@ summary(all_trips)
 ```
 
 
-**Note: The ride_length Min is -29049.97 minutes and the Max is 55944.15 minutes for our analyse we will reduce the data set to only ride_length columns values between o and 24 hours**
+**Notes:**
+* The ride_length Min is -29049.97 minutes and the Max is 55944.15 minutes for our analyse we will reduce the data set to only ride_length columns values between o and 24 hours.
 
 **Remove trips that the ride length is <= 0 or more than one day (1440 minutes) and make a copy for the cleaned data frame("all_trips_v2")**
 
@@ -209,7 +217,7 @@ summary(all_trips)
 all_trips_v2 <- all_trips[!(all_trips$ride_length > 1440 | all_trips$ride_length <= 0),]
 str(all_trips_v2)
 ```
-#Analyzing the data set
+#Analyzing The Data
 
 **Analyzing the average ride time for both the casual and member type users:**
 
@@ -222,8 +230,6 @@ membervstime <- ggplot(userType_means) +
 
 
 grid.arrange(membervstime, ncol = 2)  
-
-
 ```
 ![](Images/0000091)
 
@@ -249,7 +255,7 @@ all_trips_v2 %>%
 ![](Images/0000051)
 
 **Notes:** 
-* the annual members use the serve more consistently throughout the week days well the causal member use the serve mostly on the weekend.
+* The annual members use the serve more consistently throughout the week days well the causal member use the serve mostly on the weekend.
 
 **Creating a new data frame using only the rows with info in the "bike_type" column and analyzing which bike type causal and member perfer**
 
@@ -270,7 +276,7 @@ ggplot()+
 ![](Images/0000073)
 
 **Notes:**
-* Both type seem to prefer the classic bikes however there is a more clear preference with the annual members.
+* Both type seem to prefer the classic bikes however there is a more clear preference with the annual members for the classic bikes.
 
 **Analyzing which bike type causal and member use most on each day of the week**
 
@@ -322,7 +328,7 @@ chicago_stamen <- get_stamenmap(
   maptype = "toner")
 ```
 
-**plotting the concordance on the Chicago map**
+**Plotting the concordance on the Chicago map**
 
 ```{r}
 ggmap(chicago_stamen,darken = c(0.7, "white")) +

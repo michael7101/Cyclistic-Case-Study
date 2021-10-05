@@ -225,7 +225,11 @@ grid.arrange(membervstime, ncol = 2)
 
 
 ```
-**Observations: the casual riders spend on average about twice as much time on a ride then the members**
+![](Images/0000091)
+
+**Notes:**
+
+* The casual riders spend on average about twice as much time on a ride then the members.
 
 
 **Analyzing the number of rides by user type for each week day**
@@ -242,10 +246,12 @@ all_trips_v2 %>%
   labs(title = "Number of Rides by User Type for Each Day of The Week",x="Days of the week",y="Number of rides",caption = "Data by Motivate International Inc", fill="User type") +
   theme(legend.position="top")
 ```
+![](Images/0000051)
 
-**Observations: the annual members use the serve more consistently throughout the week days well the causal member use the serve mostly on the weekend.**
+**Notes:** 
+* the annual members use the serve more consistently throughout the week days well the causal member use the serve mostly on the weekend.
 
-**Creating a new data frame using only the rows with info in the "bike_type" column and analyzing which bike type causal and member use most.**
+**Creating a new data frame using only the rows with info in the "bike_type" column and analyzing which bike type causal and member perfer**
 
 ```{r}
 with_bike_type <- all_trips_v2 %>% filter(rideable_type=="classic_bike" | rideable_type=="electric_bike")
@@ -261,7 +267,10 @@ ggplot()+
     theme_minimal() +
     theme(legend.position="top")
 ```
-**Observations: both type seem to prefer the classic bikes however there is a more clear preference with the annual members**
+![](Images/0000073)
+
+**Notes:**
+* Both type seem to prefer the classic bikes however there is a more clear preference with the annual members.
 
 **Analyzing which bike type causal and member use most on each day of the week**
 
@@ -279,9 +288,10 @@ ggplot(aes(x=weekday,y=totals, fill=rideable_type)) +
   theme_minimal() +
   theme(legend.position="top")
 ```
+![](Images/0000054)
 
-
-**Observations: On a weekly basis for the annual members the bike type usage is fairly consistent throughout the weekday whereas for the casual users are not consistent  and have a clear preference for the classic bikes on the weekends and no clear preference for either during the rest of the week.**
+**Notes:**
+* On a weekly basis for the annual members the bike type usage is fairly consistent throughout the weekday whereas for the casual users are not consistent  and have a clear preference for the classic bikes on the weekends and no clear preference for either during the rest of the week.
 
 
 **Creating a table for the most popular routes (>250 times) and two sub tables for each user type**
@@ -327,9 +337,12 @@ ggmap(chicago_stamen,darken = c(0.7, "white")) +
     labs(title = "Most Popular Routes for Annual Members",x=NULL,y=NULL, caption = "Data by Motivate International Inc") +
     theme(legend.position="none")
 ```
+![](Images/00002d6)
+![](Images/00002b)
 
 
-**Observations: We can see that the most popular routes are the casual members in the central area by the bay; this could be because many casual members are tourists. On the map for the annual members, the most popular routes are longer in the distance and are in the more local areas.    
+**Notes:**
+* We can see that the most popular routes are the casual members in the central area by the bay; this could be because many casual members are tourists. On the map for the annual members, the most popular routes are longer in the distance and are in the more local areas.    
 
 
 

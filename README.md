@@ -208,7 +208,7 @@ summary(all_trips)
 
 
 **Notes:**
-* The ride_length Min is -29049.97 minutes and the Max is 55944.15 minutes for our analyse we will reduce the data set to only ride_length columns values between o and 24 hours.
+* The ride_length Min is -29049.97 minutes and the Max is 55944.15 minutes for our analyse we will reduce the data set to only "ride_length" columns values between o and 24 hours.
 
 **Remove trips that the ride length is <= 0 or more than one day (1440 minutes) and make a copy for the cleaned data frame("all_trips_v2"):**
 
@@ -244,7 +244,7 @@ membervstime <- ggplot(userType_means) +
 
 grid.arrange(membervstime, ncol = 1) + my_theme  
 ```
-![](Images/0000091)
+![](Images/Rplot1.png)
 
 **Notes:**
 
@@ -264,7 +264,7 @@ all_trips_v2 %>%
   labs(title = "Number of Rides by User Type for Each Day",x="Days of the week",y="Number of rides",caption = "Data by Motivate International Inc", fill="User type") +
   theme(legend.position="top") + my_theme
 ```
-![](Images/0000051)
+![](Images/Rplot2.png)
 
 **Notes:** 
 * The annual members use the serve more consistently throughout the week days well the causal member use the serve mostly on the weekend.
@@ -285,7 +285,7 @@ ggplot()+
     theme_minimal() +
     theme(legend.position="top") + my_theme
 ```
-![](Images/0000073)
+![](Images/Rplot.png)
 
 **Notes:**
 * Both type seem to prefer the classic bikes however there is a more clear preference with the annual members for the classic bikes.

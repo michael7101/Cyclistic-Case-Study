@@ -218,6 +218,20 @@ str(all_trips_v2)
 ```
 # Analyzing The Data
 
+**Setting up plot theme elements:**
+
+```{r}
+my_theme = theme(plot.title=element_text(size=18),
+                 axis.text.x=element_text(size=14), 
+                 axis.text.y=element_text(size=14),
+                 axis.title.x=element_text(size=16), 
+                 axis.title.y=element_text(size=16),
+                 strip.text.x=element_text(size=14), 
+                 strip.text.y=element_text(size=14),
+                 legend.title=element_text(size=16), 
+                 legend.text=element_text(size=14))
+```
+
 **Analyzing the average ride time for both the casual and member type users:**
 
 ```{r}
@@ -228,14 +242,13 @@ membervstime <- ggplot(userType_means) +
                 labs(title = "Average Travel Time By User Type",x="User Type",y="Average Time In Minutes")
 
 
-grid.arrange(membervstime, ncol = 2)  
+grid.arrange(membervstime, ncol = 1) + my_theme  
 ```
 ![](Images/0000091)
 
 **Notes:**
 
 * The casual riders spend on average about twice as much time on a ride then the members.
-
 
 **Analyzing the number of rides by user type for each week day:**
 
@@ -248,8 +261,8 @@ all_trips_v2 %>%
   arrange(member_casual, weekday)  %>% 
   ggplot(aes(x = weekday, y = number_of_rides, fill = member_casual)) +
   geom_col(position = "dodge") +
-  labs(title = "Number of Rides by User Type for Each Day of The Week",x="Days of the week",y="Number of rides",caption = "Data by Motivate International Inc", fill="User type") +
-  theme(legend.position="top")
+  labs(title = "Number of Rides by User Type for Each Day",x="Days of the week",y="Number of rides",caption = "Data by Motivate International Inc", fill="User type") +
+  theme(legend.position="top") + my_theme
 ```
 ![](Images/0000051)
 
@@ -270,7 +283,7 @@ ggplot()+
     labs(title = "Bike Type Usage for Each Member Type",x="User Type",y=NULL, fill="Bike Type") +
     scale_fill_manual(values = c("classic_bike" = "#136F73","electric_bike" = "#FFC900")) +
     theme_minimal() +
-    theme(legend.position="top")
+    theme(legend.position="top") + my_theme
 ```
 ![](Images/0000073)
 
@@ -288,16 +301,38 @@ with_bike_type %>%
 ggplot(aes(x=weekday,y=totals, fill=rideable_type)) +
   geom_col(, position = "dodge") + 
   facet_wrap(~member_casual) +
-  labs(title = "Bike type usage by user type during a week",x="User type",fill="Bike Type" ,y=NULL,caption = "Data by Motivate International Inc") +
+  labs(title = "Bike Type Usage By User for Each Week Day",x="User Type",fill="Bike Type" ,y=NULL,caption = "Data by Motivate International Inc") +
   scale_fill_manual(values = c("classic_bike" = "#136F73","electric_bike" = "#FFC900")) +
   theme_minimal() +
-  theme(legend.position="top")
+  theme(legend.position="top") + my_theme
 ```
 ![](Images/0000054)
 
 **Notes:**
 * On a weekly basis for the annual members the bike type usage is fairly consistent throughout the weekday whereas for the casual users are not consistent  and have a clear preference for the classic bikes on the weekends and no clear preference for either during the rest of the week.
 
+**Analyzing bike usage between members and casual riders by day of week across the year:**
+
+```{r}
+options(repr.plot.width = 10, repr.plot.height = 5)
+
+all_trips_v2 %>% 
+  group_by(month, day_of_week, member_casual) %>% 
+  summarize(number_of_rides = n(), .groups = 'drop') %>% 
+  drop_na() %>% 
+  ggplot(aes(x = day_of_week, y = number_of_rides, fill = member_casual)) +
+  geom_col(position = "dodge") +
+  scale_y_continuous(labels = scales::comma) +
+  facet_grid(member_casual~month) +
+  labs(x = "Day of Week", y = "Number of Rides", fill = "Member/Casual",
+       title = "Bike Usage between Members and Casual Riders by Day of Week across the Year", fill = 'Member/Casual') +
+  theme(axis.text.x = element_text(angle = 90)) +
+  my_theme
+```
+![](Images/0000054)
+
+**Notes:**
+* notessss
 
 **Creating a table for the most popular routes (>250 times) and two sub tables for each user type:**
 

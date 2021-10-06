@@ -264,7 +264,7 @@ all_trips_v2 %>%
   labs(title = "Number of Rides by User Type for Each Day",x="Days of the week",y="Number of rides",caption = "Data by Motivate International Inc", fill="User type") +
   theme(legend.position="top") + my_theme
 ```
-![](Images/Rplot2.png)
+![](Images/Rplot03.png)
 
 **Notes:** 
 * The annual members use the serve more consistently throughout the week days well the causal member use the serve mostly on the weekend.
@@ -285,7 +285,7 @@ ggplot()+
     theme_minimal() +
     theme(legend.position="top") + my_theme
 ```
-![](Images/Rplot.png)
+![](Rplot2.png)
 
 **Notes:**
 * Both type seem to prefer the classic bikes however there is a more clear preference with the annual members for the classic bikes.
@@ -306,7 +306,7 @@ ggplot(aes(x=weekday,y=totals, fill=rideable_type)) +
   theme_minimal() +
   theme(legend.position="top") + my_theme
 ```
-![](Images/0000054)
+![](Rplot.png)
 
 **Notes:**
 * On a weekly basis for the annual members the bike type usage is fairly consistent throughout the weekday whereas for the casual users are not consistent  and have a clear preference for the classic bikes on the weekends and no clear preference for either during the rest of the week.
@@ -329,7 +329,7 @@ all_trips_v2 %>%
   theme(axis.text.x = element_text(angle = 90)) +
   my_theme
 ```
-![](Images/0000054)
+![](Rplot02.png)
 
 **Notes:**
 * notessss
@@ -377,9 +377,9 @@ ggmap(chicago_stamen,darken = c(0.7, "white")) +
     labs(title = "Most Popular Routes for Annual Members",x=NULL,y=NULL, caption = "Data by Motivate International Inc") +
     theme(legend.position="none")
 ```
-![](Images/00002d6)
+![](Rplot05.png)
 
-![](Images/00002b.png)
+![](Rplot06.png)
 
 **Notes:**
 * We can see that the most popular routes are the casual members in the central area by the bay; this could be because many casual members are tourists. On the map for the annual members, the most popular routes are longer in the distance and are in the more local areas.    

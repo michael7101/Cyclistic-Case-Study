@@ -248,7 +248,7 @@ grid.arrange(membervstime, ncol = 1) + my_theme
 
 **Notes:**
 
-* The casual riders spend on average about twice as much time on a ride then the members.
+* The casual riders spend, on average, about twice as much time on a ride than the members.
 
 **Analyzing the number of rides by user type for each week day:**
 
@@ -267,7 +267,7 @@ all_trips_v2 %>%
 ![](Images/Rplot03.png)
 
 **Notes:** 
-* The annual members use the serve more consistently throughout the week days well the causal member use the serve mostly on the weekend.
+* The annual members use the service more consistently throughout the weekdays, well the causal member uses the service mainly on the weekend.
 
 **Creating a new data frame using only the rows with info in the "bike_type" column and analyzing which bike type causal and member perfer:**
 
@@ -288,7 +288,7 @@ ggplot()+
 ![](Images/Rplot2.png)
 
 **Notes:**
-* Both type seem to prefer the classic bikes however there is a more clear preference with the annual members for the classic bikes.
+* Both types seem to prefer the classic bikes; however, there is a more explicit preference with the classic bikes' with the annual members.
 
 **Analyzing which bike type causal and member use most on each day of the week:**
 
@@ -309,7 +309,8 @@ ggplot(aes(x=weekday,y=totals, fill=rideable_type)) +
 ![](Images/Rplot.png)
 
 **Notes:**
-* On a weekly basis for the annual members the bike type usage is fairly consistent throughout the weekday whereas for the casual users are not consistent  and have a clear preference for the classic bikes on the weekends and no clear preference for either during the rest of the week.
+* Every weekday for the annual members, the bike type usage is relatively consistent throughout the week.
+* The casual users are not consistent and have a clear preference for the classic bikes on the weekends and no clear preference for either during the rest of the week.
 
 **Analyzing bike usage between members and casual riders by day of week across the year:**
 
@@ -384,15 +385,15 @@ ggmap(chicago_stamen,darken = c(0.7, "white")) +
 
 **Notes:**
 *  We can see that the most popular routes for the casual members are in the central area by the bay; this could be because many casual members are tourists.
-*  The most popular routes for the annual members are in the local regions of the city.    
+*  The most popular routes for the annual members are in the local regions of the city.   
 
 # Recommendations
 
-* The casual riders spend on average about twice as much time on a ride then the members.
-* The annual members use the serve more consistently throughout the week days well the causal member use the serve mostly on the weekend.
-* Both type seem to prefer the classic bikes however there is a more clear preference with the annual members for the classic bikes.
-* On a weekly basis for the annual members the bike type usage is fairly consistent throughout the weekdays
-* The casual users are not consistent and have a clear preference for the classic bikes on the weekends and no clear preference for either during the rest of the week.
-* We can see that the most popular routes for the casual members are in the central area by the bay; this could be because many casual members are tourists.
-* The most popular routes for the annual members are in the local regions of the city.    
+**Considering the business task: "What could motivate the "casual" users to change to annual subscriptions based on their behaviour?" and the insights we've found from the available data, we can make the following conclusions and recommendations:**
+
+* The casual riders spend, on average, about twice as much time on a ride as the members, which means promoting shorter rides at affordable rates may catch the attention of potential annual members. 
+* The annual members use the service more consistently throughout the weekdays, well the causal member uses the service mainly on the weekend. So setting up discounts on weekdays may encourage causal members to use the service more like an annual member. 
+* Both types seem to prefer the classic bikes; however, there is a more explicit preference with the classic bikes' with the annual members. So promoting the use of classic bikes would be recommended.
+* The months of August, June and July are the active months of the year. Promoting the annual memberships would give the best opportunity to gain more annual members.
+* The most popular routes for the annual members are in the local regions of the city. So I would recommend advertising in local regions to target potential annual members
 

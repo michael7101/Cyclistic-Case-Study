@@ -332,7 +332,9 @@ all_trips_v2 %>%
 ![](Images/Rplot02.png)
 
 **Notes:**
-* notessss
+* The months of August, June and July are the active months of the year. 
+* The months of December, February and January are the least active. 
+* The annual members' ride activity is a bit more consistent overall throughout each month of the year. 
 
 **Creating a table for the most popular routes (>250 times) and two sub tables for each user type:**
 
@@ -381,8 +383,16 @@ ggmap(chicago_stamen,darken = c(0.7, "white")) +
 ![](Images/Rplot06.png)
 
 **Notes:**
-* We can see that the most popular routes are the casual members in the central area by the bay; this could be because many casual members are tourists. On the map for the annual members, the most popular routes are longer in the distance and are in the more local areas.    
+*  We can see that the most popular routes for the casual members are in the central area by the bay; this could be because many casual members are tourists.
+*  The most popular routes for the annual members are in the local regions of the city.    
 
+# Recommendations
 
-
+* The casual riders spend on average about twice as much time on a ride then the members.
+* The annual members use the serve more consistently throughout the week days well the causal member use the serve mostly on the weekend.
+* Both type seem to prefer the classic bikes however there is a more clear preference with the annual members for the classic bikes.
+* On a weekly basis for the annual members the bike type usage is fairly consistent throughout the weekdays
+* The casual users are not consistent and have a clear preference for the classic bikes on the weekends and no clear preference for either during the rest of the week.
+* We can see that the most popular routes for the casual members are in the central area by the bay; this could be because many casual members are tourists.
+* The most popular routes for the annual members are in the local regions of the city.    
 

@@ -395,5 +395,5 @@ ggmap(chicago_stamen,darken = c(0.7, "white")) +
 * The annual members use the service more consistently throughout the weekdays, well the causal member uses the service mainly on the weekend. So setting up discounts on weekdays may encourage causal members to use the service more like an annual member. 
 * Both types seem to prefer the classic bikes; however, there is a more explicit preference with the classic bikes' with the annual members. So promoting the use of classic bikes would be recommended.
 * The months of August, June and July are the active months of the year. Promoting the annual memberships would give the best opportunity to gain more annual members.
-* The most popular routes for the annual members are in the local regions of the city. So I would recommend advertising in local regions to target potential annual members
+* The most popular routes for the annual members are in the local regions of the city. So I would recommend advertising in local regions to target potential annual members.
 

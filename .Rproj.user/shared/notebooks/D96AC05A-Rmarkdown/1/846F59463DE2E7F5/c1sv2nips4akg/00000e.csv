@@ -1,0 +1,4 @@
+"0","library(readr)"
+"0","X202009_divvy_tripdata <- read_csv(""202009-divvy-tripdata.csv"")"
+"2","Error: '202009-divvy-tripdata.csv' does not exist in current working directory ('C:/Users/Michael Jean/Documents/GitHub/Case_Study_1').
+"

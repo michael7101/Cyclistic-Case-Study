@@ -90,7 +90,7 @@ X202107_divvy_tripdata <- read_csv("~/Project_1/202107-divvy-tripdata.csv")
 X202108_divvy_tripdata <- read_csv("~/Project_1/202108-divvy-tripdata.csv")
 ```
 
-**Comparing column names in each of the files:**
+**Inspecting the data frames and look for inconsistencies:**
 
 ```{r}
 colnames(X202009_divvy_tripdata)
@@ -107,12 +107,6 @@ colnames(X202107_divvy_tripdata)
 colnames(X202108_divvy_tripdata)
 ```
 
-**Notes:**
-
-* All column names in each file have the exact same names.
-
-**Inspecting the data frames and look for inconsistencies:**
-
 ```{r}
 str(X202009_divvy_tripdata)
 str(X202010_divvy_tripdata)
@@ -128,7 +122,9 @@ str(X202107_divvy_tripdata)
 str(X202108_divvy_tripdata)
 ```
 
-**Notes** Files "X202009_divvy_tripdata", "X202009_divvy_tripdata", and "X202009_divvy_tripdata" have numerical columns on start_station_id and end_station_id.  The rest of the files have characters for these columns, which means these files need to be changed to characters so that they can stack correctly.
+**Notes:** 
+* All column names in each file have the exact same names.
+* Files "X202009_divvy_tripdata", "X202009_divvy_tripdata", and "X202009_divvy_tripdata" have numerical columns on start_station_id and end_station_id.  The rest of the files have characters for these columns, which means these files need to be changed to characters so that they can stack correctly.
 
 **Changing files Columns from numerical to character:**
 
